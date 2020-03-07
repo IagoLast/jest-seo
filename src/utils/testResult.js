@@ -1,5 +1,5 @@
 function testResult(fnName, pass, opts) {
-    const caller = `${fnName}(element, expected)`;
+    const caller = `${fnName}(element, expectedValue)`;
     // const caller = /function\s(.*?)\{/.exec(testResult.caller.toString())[1];
 
     return {
@@ -10,7 +10,7 @@ function testResult(fnName, pass, opts) {
 
 function _buildMessage(caller, opts) {
     if (typeof opts === 'string') {
-        return opts;
+        return `.${caller}\n\n${opts}`;
     }
 
     return `.${caller}\n\nActual:\n\t${opts.actual}\nExpected:\n\t${opts.expected}`

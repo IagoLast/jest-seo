@@ -24,5 +24,6 @@ const META_TAGS = [
 ];
 
 const matchers = require('./utils/generateMetaMatchers.js')(META_TAGS);
+matchers.toHaveHeading = require('./toHaveHeading');
 
 module.exports = matchers;
