@@ -51,10 +51,27 @@ Check if the html elenent has the expected title. When no title is given it only
 **Example**
 
 ```js
- const $h2 = document.createElement('h2');
+const $h2 = document.createElement('h2');
 $h2.innerText = 'dummy_text';
 
 expect($h2).toHaveHeading('h2');
+```
+
+
+```js
+const $h2 = document.createElement('h2');
+$h2.innerText = 'dummy_text';
+
+expect($h2).toHaveHeading('h1');
+```
+
+```bash
+.toHaveHeading(element, expectedValue)
+
+    Actual:
+        "H2"
+    Expected:
+        "H1"
 ```
 
 ---

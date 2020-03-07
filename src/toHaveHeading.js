@@ -10,7 +10,7 @@ function toHaveHeading(element, expectedHeading, opts) {
     const tag = element.tagName;
 
     // Aria disabled, or passing test act normally
-    if ((opts && !opts.aria) || (tag == expectedHeading.toUpperCase())) {
+    if (!opts || opts && !opts.aria) {
         return testResult(`toHaveHeading`, tag == expectedHeading.toUpperCase(),
             {
                 actual: this.utils.printReceived(tag),
@@ -25,7 +25,7 @@ function toHaveHeading(element, expectedHeading, opts) {
         return testResult('toHaveHeading', false, 'Given element does not have a role="heading" attribute. See: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/heading_role');
     }
 
-    if(role.toLowerCase() !== 'heading') {
+    if (role.toLowerCase() !== 'heading') {
         return testResult('toHaveHeading', false, `Given element does not have the right role attribute. Expected role=${this.utils.printExpected('heading')} but received role=${this.utils.printReceived(role)}`);
     }
 

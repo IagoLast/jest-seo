@@ -36,21 +36,20 @@ describe('.toHaveHeading(element, heading)', () => {
             expect(element).toHaveHeading('h2', { aria: true });
         });
 
-        it('should thrown an error when the aria option is se to true and the element has no heading role', () => {
+        it('should thrown an error when the aria option is set to true and the element has no heading role', () => {
             element.removeAttribute('role');
             expect(() => {
-
                 expect(element).toHaveHeading('h2', { aria: true });
-            }).toThrow();
+            }).toThrow(`Given element does not have a role="heading" attribute. See: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/heading_role`);
 
         });
 
-        it('should thrown an error when the aria option is se to true and the element has no heading role', () => {
+        it('should thrown an error when the aria option is set to true and the element has no heading role', () => {
             element.setAttribute('role', 'not-valid');
 
             expect(() => {
                 expect(element).toHaveHeading('h2', { aria: true });
-            }).toThrow();
+            }).toThrow(``);
         });
     });
 });
