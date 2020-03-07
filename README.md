@@ -31,8 +31,6 @@ expect($html).toHaveMetaTitle('dummy_title'); // PASS
 expect($html).toHaveMetaTitle('Different title'); // FAIL
 ```
 
----
-
 ### `.toHaveMetaDescription(expectedDescription?: String)`
 
 Check if the html elenent has the expected meta description. When no expected value is given it only checks the existence of the meta tag.
@@ -61,8 +59,6 @@ expect($html).toHaveMetaDescription('expected content'); // PASS
 expect($html).toHaveMetaDescription('unexpected content'); // FAIL
 ```
 
-
----
 
 ### `.toHaveHeading(expectedHeading: String, opts)`
 
@@ -96,5 +92,3 @@ expect(element).toHaveHeading('h2'); // FAIL
 expect(element).toHaveHeading('h2', { aria: false }); // FAIL
 expect(element).toHaveHeading('h2', { aria: true }); // PASS
 ```
-
----
