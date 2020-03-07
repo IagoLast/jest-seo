@@ -76,7 +76,8 @@ Checks the given element has the expected heading level. It also checks ARIA rol
 
 **Examples**
 
-Passing test:
+Basic tests:
+
 ```js
 const const = document.createElement('h2');
 
